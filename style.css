@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600&family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  width: auto;
+  color: #272044;
+  font-family: "Poppins", "Kantumruy Pro", sans-serif;
+}
+
+body {
+  background: #fcf5f8;
+}
+.main-container {
+  margin: 40px 200px 20px 200px;
+}
+h2 {
+  color: #885df1;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.hero-des {
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+code {
+  margin-top: 1cap;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  max-height: 350px;
+  overflow: scroll;
+}
+
+.hljs-copy-button {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #f65281 !important;
+}
+
+header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  margin: 80px 50px 0 50px;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 640px) {
+  .main-container {
+    margin: 40px 80px 20px 80px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .main-container {
+    margin: 40px 30px 20px 30px;
+  }
+  footer {
+    margin: 80px 20px 0 20px;
+  }
+  .hero-des {
+    line-height: normal;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

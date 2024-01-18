@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jessica Sun" />
+    <meta
+      name="keywords"
+      content="HTML, Learn HTML, Khmer, Tutorial, HTML Guide, HTML Basics, HTML Learning, HTML Examples, HTML Practices, Khmer HTML, HTML Code Writing, HTML Code Reading, About HTML, HTML Essentials, Using HTML, HTML Language, HTML Structure, HTML Tutorial, HTML Coding, HTML Images, HTML Text Formatting, HTML Elements, HTML Website Creation, HTML Information, HTML Web Development, HTML Tips, HTML Tricks."
+    />
+    <meta
+      name="description"
+      content="A guide to writing HTML with various practical examples. Perfect for those who want to receive instruction in Khmer and gain insights into essential HTML concepts."
+    />
+    <meta property="og:title" content="HTML Cheatsheet" />
+    <meta
+      property="og:description"
+      content="A guide to writing HTML with various practical examples. Perfect for those who want to receive instruction in Khmer and gain insights into essential HTML concepts."
+    />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/ryDsQL6/Screenshot-2024-01-18-at-7-59-02-PM.png"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="https://i.ibb.co/M62jdj2/Screenshot-2024-01-18-at-7-59-02-PM-removebg-preview.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/atelier-cave-light.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+    />
+
+    <title>HTML Cheatsheet</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <header>
+          <h1 style="font-size: 50px; margin: 0">
+            <span style="color: #f65281">HTML</span> Cheatsheet
+          </h1>
+          <p class="hero-des">
+            Cheatsheet
+            នេះត្រូវបានបង្កើតឡើងក្នុងគោលបំណងធ្វើជាជំនួយឬជាមគ្គុទ្ទេសក៍យោងបន្តិចបន្ទួចដើម្បីជួយអោយអ្នកអាចរុករកនិងស្វែងយល់ពីមូលដ្ឋានគ្រឹះនៃ
+            HTML។ គួរបញ្ជាក់ផងដែរថា Cheatsheet នេះ​ត្រូវបានសរសេរដោយ raw HTML,
+            CSS និង JavaScript។
+          </p>
+        </header>
+        <section>
+          <article id="documentStructure"></article>
+        </section>
+      </div>
+
+      <footer>
+        <hr />
+        <p style="margin: 20px 0 20px 0; text-align: center">
+          Made with ❤️ by
+          <a style="cursor: pointer" href="https://github.com/JessicaaSun"
+            >Jessica Sun</a
+          >
+        </p>
+      </footer>
+    </main>
+
+    <script type="module">
+      import data from "./data.js";
+
+      hljs.initHighlightingOnLoad();
+
+      function renderData(data) {
+        const articleContainer = document.getElementById("documentStructure");
+
+        const articlesHTML = data.map(
+          (item, index) => `
+    <article id="article_${index}">
+      <h2>${item.title}</h2>
+      <p>${item.description}</p>
+      <pre><code class="hljs language-html">${item.code}</code></pre>
+    </article>
+  `
+        );
+
+        articleContainer.innerHTML = articlesHTML.join("");
+
+        hljs.highlightAll();
+      }
+
+      renderData(data);
+    </script>
+    <script>
+      hljs.addPlugin(
+        new CopyButtonPlugin({
+          hook: (text, el) => {
+            let { replace, replacewith } = el.dataset;
+            if (replace && replacewith) {
+              return text.replace(replace, replacewith);
+            }
+            return text;
+          },
+        })
+      );
+      hljs.highlightAll();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+  </body>
+</html>
